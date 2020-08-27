@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<title>Slp Favorite</title>
+		<style>
+			body{
+				font-family:"Lucida Console", Monaco, monospace !important;
+				text-align:center;
+			}
+			.button{background-color:#efefef !important; border:1px solid #000000 !important;}
+			.button:hover{background-color:#aaaaaa !important;cursor:pointer !important;}
+			input{font-family:"Lucida Console", Monaco, monospace !important;}
+			.warn{color:#ff0000 !important;}
+			#menu{
+				padding:20px;
+			}
+			button{
+				font-family:"Lucida Console", Monaco, monospace !important;
+			}
+		</style>
+	</head>
+	<body onload="startUp()">
+		<script src="main.js"></script>
+		<div id="pathChange" style="display:none">
+			<h1>Settings</h1><br>
+			<span class="button" onclick="pathVis(1);document.getElementById('pathChangeSave').style='display:none';">Back</span><br>
+			<h2>Copy or Move to Favorite Path</h2>
+			<br><input type="radio" id="copy" name="copyMove" checked>
+			<label for="copy">Copy</label>
+			<br><input type="radio" id="move" name="copyMove" onchange="store.set('copy',document.getElementById('copy').checked)">
+			<label for="move">Move</label><br>
+			<h2>Rename Favorited Files</h2>
+			<input type="checkbox" id="rename" onchange="toggleShow('renameOpt');">
+			<label for="rename">Rename files upon favorite</label>
+			<div id="renameOpt" style="display:none">
+				<label for="namer">Set your rename:</label>
+				<input type="text" id="namer" value="mm,dd,yyyy,time,p1SC,p2SC,SS"><br>
+				<button onclick="toggleShow('nameSyn')">Show/Hide Rename Syntax</button><br><br>
+				<span id="nameSyn">
+					Rename Syntax:<br>
+					Separate all values by a comma (,)<br><br>Values will be separated by a dash (-) in the names, although if time is selected the colons (:) will be replaced with underscores (_)
+					<br><br>
+					Possible Values<br>
+					<p>p1N (player 1 name)</p>
+					<p>p2N (player 2 name)</p>
+					<p>p1T (player 1 tag)</p>
+					<p>p2T (player 2 tag)</p>
+					<p>dd (day)</p>
+					<p>mm (month)</p>
+					<p>yyyy (year)</p>
+					<p>p1LC (player 1 long character name)</p>
+					<p>p2LC (player 2 long character name)</p>
+					<p>p1SC (player 1 short character name)</p>
+					<p>p2SC (player 2 short character name)</p>
+					<p>time (time of the game, in your local time zone)</p>
+					<p>LS (long stage name)</p>
+					<p>SS (short stage name)</p>
+				</span>
+			</div>
+			<h2>Change Slp File Path</h2><br>
+			<label for="filePath"><input type="text" id="filePathText" readOnly value="File Path Here" onchange="show5('pathChangeSave')"><span class="button">Change</span></label>
+			<p class="warn" id="pathWarn" style="display:none">Set Slp File Path</p>
+			<input type="file" webkitdirectory="true" id="filePath" style="display:none" onchange="changePath()">
+			<br><h2>Change Favorite Path</h2><br>(make sure there is already a file in the folder before setting it, default is a subfolder of your slippi path called "favorites")<br>
+			<label for="favPath"><input type="text" id="favPathText" readOnly value="File Path Here" onchange="show5('pathChangeSave')"><span class="button">Change</span></label>
+			<p class="warn" id="favWarn" style="display:none">Set Favorite File Path</p><br>
+			<input type="file" webkitdirectory="true" id="favPath" style="display:none" onchange="changeFav()">
+			<input type="checkbox" id="moveFav">
+			<label for="moveFav">Move previously favorited  replays to new directory</label>
+			<br>
+			<button onclick="show5('pathChangeSave')">Submit</button><br>
+			<span id="pathChangeSave" style="display:none">Changes Saved</span>
+		</div>
+		<div id="reg">
+			<h1>Slp Favorite</h1>
+			<div id="menu" class="button" onclick="pathVis(0)"> Settings</div><br>
+			<div id="menu" class="button" onclick="pathVis(2)"> Favorite Files</div><br>
+			<div id="menu" class="button" onclick="favoriteLast()"> Favorite Last Modified File</div>
+			<br><span id="fileSaved"></span>
+		</div>
+		<div id="favFromFiles" style="display:none">
+			<h1>Select Files to Favorite</h1><br>
+			<span style="text-align:left" class="button" onclick="pathVis(3)">Back</span>
+			<label for="favList"><input type="text" id="favFileText" readOnly value="Chosen Files"><span class="button">Choose</span></label>
+			<input type="file"  id="favList" style="display:none" multiple onchange="listFav()">
+			<button onclick="favoriteFiles()">Favorite!</button>
+			<span id="filesSaved" style="display:none">Favorited Files</span>
+		</div>
+	</body>
+</html>
