@@ -183,10 +183,10 @@ function favorite(path){
 					newGameName+=day.substring(18,20);
 					break;
 				case "LS":
-					newgameName+=longStage(game.getSettings().stageId);
+					newGameName+=longStage(game.getSettings().stageId);
 					break;
 				case "SS":
-					newgameName+=shortStage(game.getSettings().stageId);
+					newGameName+=shortStage(game.getSettings().stageId);
 					break;
 			}
 		}
