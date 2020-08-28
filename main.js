@@ -262,16 +262,16 @@ function shortStage(stage){
 }
 function longChar(charId){
 	switch(charId){
-		case 0:
+		case 8:
 			return "Mario";
 			break;
-		case 1:
+		case 2:
 			return "Fox";
 			break;
-		case 2:
+		case 0:
 			return "Captain Falcon";
 			break;
-		case 3:
+		case 1:
 			return "Donkey Kong";
 			break;
 		case 4:
@@ -283,77 +283,77 @@ function longChar(charId){
 		case 6:
 			return "Link";
 			break;
-		case 7:
+		case 19:
 			return "Sheik";
 			break;
-		case 8:
+		case 11:
 			return "Ness";
 			break;
-		case 9:
+		case 12:
 			return "Peach";
 			break;
-		case 10:
+		case 14:
 			return "Ice Climbers";
 			break;
-		case 12:
+		case 13:
 			return "Pikachu";
 			break;
-		case 13:
+		case 16:
 			return "Samus";
 			break;
-		case 14:
+		case 17:
 			return "Yoshi";
 			break;
 		case 15:
 			return "Jigglypuff";
 			break;
-		case 16:
+		case 10:
 			return "Mewtwo";
 			break;
-		case 17:
+		case 7:
 			return "Luigi";
 			break;
-		case 18:
+		case 9:
 			return "Marth";
 			break;
-		case 19:
+		case 18:
 			return "Zelda";
 			break;
-		case 20:
+		case 21:
 			return "Young Link";
 			break;
-		case 21:
+		case 22:
 			return "Dr. Mario";
 			break;
-		case 22:
+		case 20:
 			return "Falco";
 			break;
-		case 23:
+		case 24:
 			return "Pichu";
 			break;
-		case 24:
+		case 3:
 			return "Mr. Game and Watch";
 			break;
 		case 25:
 			return "Ganondorf";
 			break;
-		case 26:
+		case 23:
 			return "Roy";
 			break;
 	}
 }
 function shortChar(charId){
 	switch(charId){
-		case 0:
+		case 8:
 			return "Mario";
 			break;
-		case 1:
+		case 2:
 			return "Fox";
 			break;
-		case 2:
+		case 0:
 			return "Falcon";
 			break;
-		case 3:
+		case 1:
 			return "DK";
 			break;
 		case 4:
@@ -365,61 +365,61 @@ function shortChar(charId){
 		case 6:
 			return "Link";
 			break;
-		case 7:
+		case 19:
 			return "Sheik";
 			break;
-		case 8:
+		case 11:
 			return "Ness";
 			break;
-		case 9:
+		case 12:
 			return "Peach";
 			break;
-		case 10:
-			return "Icies";
-			break;
-		case 12:
-			return "Pikachu";
+		case 14:
+			return "ICs";
 			break;
 		case 13:
+			return "Pika";
+			break;
+		case 16:
 			return "Samus";
 			break;
-		case 14:
+		case 17:
 			return "Yoshi";
 			break;
 		case 15:
 			return "Puff";
 			break;
-		case 16:
+		case 10:
 			return "Mewtwo";
 			break;
-		case 17:
+		case 7:
 			return "Luigi";
 			break;
-		case 18:
+		case 9:
 			return "Marth";
 			break;
-		case 19:
+		case 18:
 			return "Zelda";
 			break;
-		case 20:
-			return "YL";
-			break;
 		case 21:
-			return "Doc";
+			return "YLink";
 			break;
 		case 22:
+			return "Doc";
+			break;
+		case 20:
 			return "Falco";
 			break;
-		case 23:
+		case 24:
 			return "Pichu";
 			break;
-		case 24:
+		case 3:
 			return "GnW";
 			break;
 		case 25:
 			return "Ganon";
 			break;
-		case 26:
+		case 23:
 			return "Roy";
 			break;
 	}
